@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Props = ({props}) => {
+const Props = ({properties}) => {
   return (
     <table className="props">
       <thead>
@@ -15,14 +15,14 @@ const Props = ({props}) => {
       </thead>
       <tbody>
       {
-        Object.keys(props).map(key => {
+        Object.keys(properties).map(key => {
           return (
             <tr key={key}>
               <td>{key}</td>
-              <td>{props[key].description}</td>
-              <td>{props[key].type.name}</td>
-              <td>{props[key].defaultValue && props[key].defaultValue.value}</td>
-              <td>{props[key].required && "X"}</td>
+              <td>{properties[key].description}</td>
+              <td>{properties[key].type.name}</td>
+              <td>{properties[key].defaultValue && properties[key].defaultValue.value}</td>
+              <td>{properties[key].required && "X"}</td>
             </tr>
           );
         })
@@ -33,7 +33,7 @@ const Props = ({props}) => {
 }
 
 Props.propTypes = {
-  props: PropTypes.object.isRequired
+  properties: PropTypes.object.isRequired
 };
 
 export default Props;

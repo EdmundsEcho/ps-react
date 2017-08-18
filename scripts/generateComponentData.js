@@ -10,6 +10,8 @@ var paths = {
   output: path.join(__dirname, '../config', 'componentData.js')
 };
 
+console.log(paths);
+
 const enableWatchMode = process.argv.slice(2) == '--watch';
 if (enableWatchMode) {
   // Regenerate component metadata when components or examples change.
@@ -23,6 +25,7 @@ if (enableWatchMode) {
 
 function generate(paths) {
   var errors = [];
+
   var componentData = getDirectories(paths.components).map(function(componentName) {
     try {
       return getComponentData(paths, componentName);
@@ -36,6 +39,8 @@ function generate(paths) {
 function getComponentData(paths, componentName) {
   var content = readFile(path.join(paths.components, componentName, componentName + '.js'));
   var info = parse(content);
+  console.log(content + '-' + componentName);
+  debugger;
   return {
     name: componentName,
     description: info.description,

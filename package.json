@@ -1,16 +1,12 @@
 {
-  "name": "ps-react-build-template",
+  "name": "ps-react-doc-2",
   "version": "1.0.0",
   "main": "./lib/index.js",
   "private": true,
   "engines": {
     "node": ">=4.0.0"
   },
-  "author": {
-    "name": "Cory House",
-    "email": "cory@reactjsconsulting.com",
-    "url": "http://reactjsconsulting.com/"
-  },
+  "author": "Cory House <cory@reactjsconsulting.com> (http://reactjsconsulting.com/)",
   "files": [
     "lib"
   ],
@@ -22,8 +18,10 @@
     "pluralsight"
   ],
   "dependencies": {
+    "prismjs": "^1.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-prism": "^4.3.0",
     "styled-components": "1.4.5"
   },
   "devDependencies": {
@@ -55,7 +53,6 @@
     "file-loader": "0.11.1",
     "fs-extra": "3.0.1",
     "gh-pages": "0.12.0",
-    "highlight.js": "9.10.0",
     "html-webpack-plugin": "2.28.0",
     "jest": "20.0.3",
     "json-loader": "0.5.4",
@@ -135,5 +132,14 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "description": "A library of React components created in \"Creating Reusable React Components\" on Pluralsight.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coryhouse/ps-react.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coryhouse/ps-react/issues"
   }
 }
