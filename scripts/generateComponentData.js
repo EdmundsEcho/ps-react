@@ -10,8 +10,6 @@ var paths = {
   output: path.join(__dirname, '../config', 'componentData.js')
 };
 
-console.log(paths);
-
 const enableWatchMode = process.argv.slice(2) == '--watch';
 if (enableWatchMode) {
   // Regenerate component metadata when components or examples change.
@@ -39,8 +37,7 @@ function generate(paths) {
 function getComponentData(paths, componentName) {
   var content = readFile(path.join(paths.components, componentName, componentName + '.js'));
   var info = parse(content);
-  console.log(content + '-' + componentName);
-  debugger;
+  //  debugger;
   return {
     name: componentName,
     description: info.description,
@@ -83,9 +80,14 @@ function getDirectories(filepath) {
 }
 
 function getFiles(filepath) {
-  return fs.readdirSync(filepath).filter(function(file) {
+  return fs.readdirSync(filepath)
+    .filter(function(file) {
     return fs.statSync(path.join(filepath, file)).isFile();
-  });
+  })
+    .filter(function(file) {
+    return ( !(/(^|\/)\.[^\/\.]/g).test(file))
+    })
+  ;
 }
 
 function writeFile(filepath, content) {
