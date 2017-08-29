@@ -51,6 +51,7 @@ jspm_packages
 .env
 yarn-debug.log*
 yarn-error.log*
+.tern-port
 
 # built component library
 /lib
