@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Label from '../Label';
-// if using CSS Modules, must specify the css source in the component file itself
-// then we reference the style: style.style_class_name
-// To see that it's working, ensure to enable it in webpack and check out the
-// source code generated.  The downsie: cannot use global css styles on their
-// own.
-import styles from './textInput.css';
 
-/** Text input with integrated label to enforce consistency in layout, error display, label placement, and required field marker. */
-function TextInput({htmlId, name, label, type = "text", required = false, onChange, placeholder, value, error, children, ...props}) {
+/** Text input with integrated label to enforce consistency in layout, error display, label placement, and required field marker.
+This is a stateless, function component. */
+function TextInputE({htmlId, name, label, type = "text", required = false, onChange, placeholder, value, error, children, ...props}) {
   return (
-    <div className={styles.fieldset}>
+    <div style={{marginBottom: 16}}>
       <Label htmlFor={htmlId} label={label} required={required} />
       <input
         id={htmlId}
@@ -20,15 +15,15 @@ function TextInput({htmlId, name, label, type = "text", required = false, onChan
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={error && styles.inputError}
+        style={error && {border: 'solid 1px red'}}
         {...props}/>
-        {children}
-      {error && <div className={styles.error}>{error}</div>}
+      {children}
+      {error && <div className="error" style={{color: 'red'}}>{error}</div>}
     </div>
   );
 };
 
-TextInput.propTypes = {
+TextInputE.propTypes = {
   /** Unique HTML ID. Used for tying label to HTML input. Handy hook for automated testing. */
   htmlId: PropTypes.string.isRequired,
 
@@ -60,4 +55,4 @@ TextInput.propTypes = {
   children: PropTypes.node
 };
 
-export default TextInput;
+export default TextInputE;

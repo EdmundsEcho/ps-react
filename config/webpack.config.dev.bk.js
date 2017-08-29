@@ -21,6 +21,7 @@ const publicPath = '/';
 const publicUrl = '';
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl);
+
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -88,19 +89,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-
-      // Alias to allow the current code to look like the final code references
       'ps-react': path.resolve(__dirname, '../src/components')
-
-      // aliases to help webpack point Tern to the right place
-      //'actions': srcPath + '/actions/',
-      //'components': srcPath + '/components/',
-      //'containers': srcPath + '/containers/',
-      //'reducers': srcPath + '/reducers/',
-      //'store': srcPath + '/store/',
-      //'images': srcPath + '/images',
-      //'config': srcPath + '/config',
-      //'utils': srcPath + '/utils.js',
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -109,13 +98,6 @@ module.exports = {
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
       // new ModuleScopePlugin(paths.appSrc),
-
-      // Use the command line to set process.env.NODE_PATH to 'production' to overide
-      // this default setting.
-      new webpack.EnvironmentPlugin({
-        NODE_ENV: 'development',  // use 'development' unless process.env.NODE_ENV is defined
-        DEBUG: false
-        })
     ],
   },
   module: {
@@ -203,8 +185,8 @@ module.exports = {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
-              // modules: true,
-              // localIdentName: '[name]_[local]_[hash:base64:5]'
+              // modules: true,
+              // localIdentName: '[name]_[local]_[hash:base64:5]'
             },
           },
           {

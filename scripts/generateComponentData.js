@@ -70,6 +70,10 @@ function getExampleFiles(examplesPath, componentName) {
   } catch(error) {
     console.log(chalk.red(`No examples found for ${componentName}.`));
   }
+  // if (componentName === 'EyeIconE') {
+  //   console.log(componentName);
+  //   console.log(exampleFiles);
+  // }
   return exampleFiles;
 }
 

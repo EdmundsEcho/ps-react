@@ -2,26 +2,13 @@
 
 A library of React components created in "Creating Reusable React Components" on Pluralsight.
 
-## Install
-```
-npm install ps-react
-```
-
-## Issues
-[Here's a list of current known issues in the course](https://github.com/coryhouse/ps-react/issues).
-
-## Docs
+This is not the master repository.  Please refer to the following for the latest
+updates:
 [Component documentation](http://coryhouse.github.io/ps-react)
 
-## Component Hall of Fame 🎉
-Here's a list of components built by your fellow viewers!
-
-Submit a pull request to add your link here... :)
-
-## React Component libraries
-Here's a list of popular component libraries I mention at the end of the course:
+## React Component libraries curated by Cory
 - [Material UI](http://material-ui.com)
-- [React Toolbox](http://react-toolbox.com) 
+- [React Toolbox](http://react-toolbox.com)
 - [React Bootstrap](http://react-bootstrap.github.io)
 - [React Foundation](http://react.foundation)
 - [Blueprint](http://blueprintjs.com)

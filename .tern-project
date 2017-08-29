@@ -1,0 +1,20 @@
+{
+  "libs": [
+    "browser",
+    "jquery",
+    "underscore",
+    "react",
+    "chai"
+  ],
+  "loadEagerly":[
+  ],
+  "plugins": {
+    "complete_strings": {},
+    "modules": {},
+    "node": {},
+    "es_modules": {},
+    "doc_comment": { "strong": true },
+    "jsx": {},
+    "webpack": { "configPath": "./config/webpack.config.dev.js"}
+  }
+}
